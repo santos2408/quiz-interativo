@@ -16,7 +16,7 @@ const insertPopupScoreInfo = (titleMessage, score) => {
    popupContent.insertAdjacentElement('afterbegin', popupTitleElement)
 }
 
-const differentMessagesToEachScore = score => {
+const showInfoAccordingScore = score => {
    if (score === 100) {
       insertPopupScoreInfo('Parabéns, você acertou todas!', score)
       return
@@ -30,11 +30,7 @@ const differentMessagesToEachScore = score => {
    insertPopupScoreInfo('Você errou todas =(', score)
 }
 
-form.addEventListener('submit', event => {
-   event.preventDefault()
-
-   const question = event.target
-
+const getUserAnswers = question => {
    const userAnswers = [
       question.inputQuestion1.value,
       question.inputQuestion2.value,
@@ -42,7 +38,11 @@ form.addEventListener('submit', event => {
       question.inputQuestion4.value,
       question.inputQuestion5.value
    ]
+   
+   return userAnswers
+}
 
+const checkCorrectAnswers = userAnswers => {
    let score = 0
 
    userAnswers.forEach((userAnswer, index) => {
@@ -52,10 +52,8 @@ form.addEventListener('submit', event => {
       }
    })
 
-   differentMessagesToEachScore(score)
-   
-   popup.style.display = 'block'
-})
+   return score
+}
 
 const closePopup = event => {
    const elementClicked = event.target
@@ -67,4 +65,19 @@ const closePopup = event => {
    }
 }
 
+const showTotalScore = event => {
+   event.preventDefault()
+
+   const question = event.target
+
+   const userAnswers = getUserAnswers(question)
+   const correctAnswers = checkCorrectAnswers(userAnswers)
+
+   showInfoAccordingScore(correctAnswers)
+   
+   popup.style.display = 'block'
+}
+
+
+form.addEventListener('submit', showTotalScore)
 popup.addEventListener('click', closePopup)
