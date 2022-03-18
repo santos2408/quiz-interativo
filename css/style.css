@@ -1,0 +1,27 @@
+.question__container {
+   background-color: #B9930C;
+   border-radius: 5px;
+   padding: 30px;
+}
+
+.lead {
+   background-color: green;
+   border-radius: 5px;
+   padding: 15px;
+}
+
+.form-check-label {
+   font-size: 1.125rem;
+}
+
+input {
+   margin-right: 5px;
+}
+
+.btn {
+   padding: 15px 60px;
+}
+
+.bg-quiz {
+   background-color: #002704;
+}
