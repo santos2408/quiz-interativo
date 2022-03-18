@@ -2,9 +2,9 @@ Este exercício será um pouquinho diferente dos anteriores.
 
 Seu desafio é desenvolver uma versão do quiz que:
 
-[] - O quiz será sobre a história do Brasil;
-[] - As cores da aplicação devem representar o Brasil;
-[] - Exiba na tela a pontuação final do usuário;
+[X] - O quiz será sobre a história do Brasil;
+[X] - As cores da aplicação devem representar o Brasil;
+[] - Exiba popup na tela com a pontuação final do usuário;
 
 Independente se você já fez o quiz dos filmes enquanto acompanhava a aula, tente fazer esse exercício sem rever partes da aula.
 

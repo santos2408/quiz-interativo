@@ -25,3 +25,56 @@ input {
 .bg-quiz {
    background-color: #002704;
 }
+
+/* MODAL SCORE */
+
+.popup-wrapper {
+   display: none;
+   background: rgba(0,0,0,.7);
+   position: fixed;
+   z-index: 100;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+}
+
+.popup {
+   position: relative;
+   width: 100%;
+   max-width: 400px;
+   
+   text-align: center;
+   margin: 20px auto;
+   padding: 40px;
+   border-radius: 5px;
+   background: #fff;
+}
+
+.popup-content {
+   margin-top: 20px;
+}
+
+.popup-close {
+   position: absolute;
+   top: 0;
+   right: 15px;
+   font-size: 1.5rem;
+   cursor: pointer;
+   padding: 5px;
+}
+
+.popup-score {
+   font-size: 4rem;
+}
+
+.popup-button {
+   display: block;
+   width: 120px;
+   margin: 20px auto 0 auto;
+
+   border: none;
+   padding: 10px 25px;
+   background-color: #0095FF;
+   color: #fff;
+}
