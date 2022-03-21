@@ -5,7 +5,7 @@ const popupContent = document.querySelector('.popup-content')
 const popupTitleElement = document.createElement('h2')
 const popupScoreElement = document.createElement('p')
 
-const correctAnswers = ['A', 'B', 'A', 'A', 'B']
+const correctAnswers = ['C', 'D', 'A', 'C', 'B']
 
 const getUserAnswers = question => {
   const userAnswers = [
