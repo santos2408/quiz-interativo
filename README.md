@@ -6,4 +6,4 @@ Seu desafio é desenvolver uma versão do quiz que:
 [X] - As cores da aplicação devem representar o Brasil;<br>
 [X] - Exiba popup na tela com a pontuação final do usuário;
 
-Confira o resultado: 
+Confira o resultado: https://santos2408.github.io/quiz-interativo/
