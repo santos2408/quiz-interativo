@@ -76,6 +76,12 @@ const showTotalScore = event => {
 
   showInfoAccordingScore(correctAnswersScore)
   popup.style.display = 'block'
+
+  scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  })
 }
 
 const closePopup = event => {
