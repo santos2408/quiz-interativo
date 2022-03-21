@@ -30,10 +30,24 @@ const checkCorrectAnswers = userAnswers => {
   return score
 }
 
+const scoreCounterAnimation = score => {
+  let counter = 0
+  
+  const timer = setInterval(() => {
+    if (counter === score) {
+      clearInterval(timer)
+    }
+    
+    popupScoreElement.textContent = `${counter}%`
+    counter++
+  }, 10)
+}
+
 const insertPopupScoreInfo = (titleMessage, score) => {
   popupTitleElement.textContent = titleMessage
-  popupScoreElement.textContent = `${score}%`
   popupScoreElement.classList.add('popup-score')
+  
+  scoreCounterAnimation(score)
 
   popupContent.insertAdjacentElement('afterbegin', popupScoreElement)
   popupContent.insertAdjacentElement('afterbegin', popupTitleElement)
