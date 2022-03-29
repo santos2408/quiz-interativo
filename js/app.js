@@ -7,30 +7,29 @@ const popupScoreElement = document.createElement('p')
 
 const correctAnswers = ['C', 'D', 'A', 'C', 'B']
 
-const getUserAnswers = question => {
+const getUserAnswers = () => {
   const userAnswers = [
-    question.inputQuestion1.value,
-    question.inputQuestion2.value,
-    question.inputQuestion3.value,
-    question.inputQuestion4.value,
-    question.inputQuestion5.value
+    form.inputQuestion1.value,
+    form.inputQuestion2.value,
+    form.inputQuestion3.value,
+    form.inputQuestion4.value,
+    form.inputQuestion5.value
   ]
   return userAnswers
 }
 
-const checkCorrectAnswers = userAnswers => {
+const getScore = userAnswers => {
   let score = 0
 
   userAnswers.forEach((userAnswer, index) => {
     if (userAnswer === correctAnswers[index]) {
         score += 20
-        return
     }
   })
   return score
 }
 
-const scoreCounterAnimation = score => {
+const animateScoreCounter = score => {
   let counter = 0
   
   const timer = setInterval(() => {
@@ -41,41 +40,6 @@ const scoreCounterAnimation = score => {
     popupScoreElement.textContent = `${counter}%`
     counter++
   }, 10)
-}
-
-const insertPopupScoreInfo = (titleMessage, score) => {
-  popupTitleElement.textContent = titleMessage
-  popupScoreElement.classList.add('popup-score')
-  
-  scoreCounterAnimation(score)
-
-  popupContent.insertAdjacentElement('afterbegin', popupScoreElement)
-  popupContent.insertAdjacentElement('afterbegin', popupTitleElement)
-}
-
-const showInfoAccordingScore = score => {
-  if (score === 100) {
-    insertPopupScoreInfo('Parabéns, você acertou todas!', score)
-    return
-  }
-
-  if (score > 0 && score < 100) {
-    insertPopupScoreInfo('VOCÊ ACERTOU', score)
-    return
-  }
-
-  insertPopupScoreInfo('Você errou todas =(', score)
-}
-
-const showTotalScore = event => {
-  event.preventDefault()
-
-  const question = event.target
-  const userAnswers = getUserAnswers(question)
-  const correctAnswersScore = checkCorrectAnswers(userAnswers)
-
-  showInfoAccordingScore(correctAnswersScore)
-  popup.style.display = 'block'
 
   scrollTo({
     top: 0,
@@ -84,12 +48,38 @@ const showTotalScore = event => {
   })
 }
 
-const closePopup = event => {
-  const elementClicked = event.target
-  const classesThatClosePopup = ['popup-close', 'popup-button', 'popup-wrapper']
+const showScorePopup = (scoreMessage, score) => {
+  popupTitleElement.textContent = scoreMessage
+  popupScoreElement.classList.add('popup-score')
+  
+  animateScoreCounter(score)
 
-  if ( classesThatClosePopup.some(className => elementClicked
-        .classList[0] === className)) {
+  popupContent.insertAdjacentElement('afterbegin', popupScoreElement)
+  popupContent.insertAdjacentElement('afterbegin', popupTitleElement)
+  popup.style.display = 'block'
+}
+
+const getScoreMessage = score => ({
+  0: 'Você errou todas =(',
+  100: 'Parabéns, você acertou todas!' 
+})[score] || `VOCÊ ACERTOU`
+
+const showTotalScore = event => {
+  event.preventDefault()
+
+  const userAnswers = getUserAnswers()
+  const score = getScore(userAnswers)
+  const scoreMessage = getScoreMessage(score)
+
+  showScorePopup(scoreMessage, score)
+}
+
+const closePopup = event => {
+  const clickedElement = event.target
+  const classesThatClosePopup = ['popup-close', 'popup-button', 'popup-wrapper']
+  const clickedElementHasClass = classesThatClosePopup.includes(clickedElement.classList[0])
+
+  if (clickedElementHasClass) {
     popup.style.display = 'none'
   }
 }
