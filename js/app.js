@@ -19,14 +19,14 @@ const getUserAnswers = () => {
 }
 
 const getScore = userAnswers => {
-  let score = 0
-
-  userAnswers.forEach((userAnswer, index) => {
+  const totalScore = userAnswers.reduce((score, userAnswer, index) => {
     if (userAnswer === correctAnswers[index]) {
-        score += 20
+      score += 20
     }
-  })
-  return score
+    return score
+  }, 0)
+
+  return totalScore
 }
 
 const animateScoreCounter = score => {
