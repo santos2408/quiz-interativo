@@ -1,0 +1,31 @@
+{
+  "name": "quiz-interativo",
+  "version": "1.0.0",
+  "description": "Este exercício será um pouquinho diferente dos anteriores.",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test ",
+    "test:headed": "playwright test --headed",
+    "test:debug": "npx playwright test --debug",
+    "start": "npx http-server -p 3000",
+    "start-test": "concurrently -k \"npm run wait-server\" \"npm run start\"",
+    "wait-server": "wait-on http://localhost:3000 && npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/santos2408/quiz-interativo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/santos2408/quiz-interativo/issues"
+  },
+  "homepage": "https://github.com/santos2408/quiz-interativo#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.20.1",
+    "concurrently": "^7.0.0",
+    "playwright-watch": "^1.3.23",
+    "wait-on": "^6.0.1"
+  }
+}
