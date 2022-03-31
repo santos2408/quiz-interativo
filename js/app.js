@@ -60,8 +60,7 @@ const showScorePopup = (scoreMessage, score) => {
 
   animateScoreCounter(score);
 
-  popupContent.insertAdjacentElement('afterbegin', popupScoreElement);
-  popupContent.insertAdjacentElement('afterbegin', popupTitleElement);
+  popupContent.prepend(popupTitleElement, popupScoreElement);
   popup.style.display = 'block';
 };
 
