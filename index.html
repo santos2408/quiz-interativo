@@ -1,183 +1,200 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Quiz | História do Brasil</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="./css/style.css">
-  <title>Quiz | História do Brasil</title>
-</head>
-
-<body>
-  <div class="popup-wrapper">
-    <div class="popup">
-      <div class="popup-close">x</div>
-      <div class="popup-content">
-        <button class="popup-button">Fechar</button>
+  <body>
+    <div class="popup-wrapper">
+      <div class="popup">
+        <div class="popup-close">x</div>
+        <div class="popup-content">
+          <button class="popup-button">Fechar</button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="intro py-3 bg-success text-center">
-    <div class="container">
-      <h2 class="text-light display-3 my-4">Quiz</h2>
-      <h2 class="text-light display-4 my-4">História do Brasil</h2>
+    <div class="intro py-3 bg-success text-center">
+      <div class="container">
+        <h2 class="text-light display-3 my-4">Quiz</h2>
+        <h2 class="text-light display-4 my-4">História do Brasil</h2>
+      </div>
     </div>
-  </div>
 
-  <div class="quiz py-4 bg-quiz">
-    <div class="container">
-      <h2 class="my-5 text-white text-center">O quanto você sabe sobre a História do Brasil?</h2>
+    <div class="quiz py-4 bg-quiz">
+      <div class="container">
+        <h2 class="my-5 text-white text-center">
+          O quanto você sabe sobre a História do Brasil?
+        </h2>
 
-      <form class="quiz-form text-light">
-        <div class="my-5 question__container">
-          <p class="lead font-weight-normal">1. Qual motivo levou a corte portuguesa a mudar-se para o Brasil?</p>
-          <div class="form-check my-2">
-            <label class="form-check-label">
-              <input type="radio" name="inputQuestion1" value="A">
-              A descoberta de ouro e diamente em Minas Gerais
-            </label>
+        <form class="quiz-form text-light">
+          <div data-testid="question-1" class="my-5 question__container">
+            <p class="lead font-weight-normal">
+              1. Qual motivo levou a corte portuguesa a mudar-se para o Brasil?
+            </p>
+            <div class="form-check my-2">
+              <label data-testid="answer-1-1" class="form-check-label">
+                <input type="radio" name="inputQuestion1" value="A" />
+                A descoberta de ouro e diamente em Minas Gerais
+              </label>
+            </div>
+            <div class="form-check my-2">
+              <label data-testid="answer-1-2" class="form-check-label">
+                <input type="radio" name="inputQuestion1" value="B" />
+                A decisão de transformar o Brasil numa métropole.
+              </label>
+            </div>
+            <div class="form-check my-2">
+              <label data-testid="answer-1-3" class="form-check-label">
+                <input type="radio" name="inputQuestion1" value="C" />
+                A invasão de Napoleão Bonaparte a Portugal
+              </label>
+            </div>
+            <div class="form-check my-2">
+              <label data-testid="answer-1-4" class="form-check-label">
+                <input type="radio" name="inputQuestion1" value="D" />
+                Proteger a colônia dos piratas Ingleses e Franceses
+              </label>
+            </div>
           </div>
-          <div class="form-check my-2">
-            <label class="form-check-label">
-              <input type="radio" name="inputQuestion1" value="B">
-              A decisão de transformar o Brasil numa métropole.
-            </label>
-          </div>
-          <div class="form-check my-2">
-            <label class="form-check-label">
-              <input type="radio" name="inputQuestion1" value="C">
-              A invasão de Napoleão Bonaparte a Portugal
-            </label>
-          </div>
-          <div class="form-check my-2">
-            <label class="form-check-label">
-              <input type="radio" name="inputQuestion1" value="D">
-              Proteger a colônia dos piratas Ingleses e Franceses
-            </label>
-          </div>
-        </div>
 
-        <div class="my-5 question__container">
-          <p class="lead font-weight-normal">2. Quem foi o primeiro presidente do Brasil?</p>
-          <div class="form-check my-2">
-            <label class="form-check-label">
-              <input type="radio" name="inputQuestion2" value="A">
-              Floriano Peixoto
-            </label>
+          <div class="my-5 question__container">
+            <p class="lead font-weight-normal">
+              2. Quem foi o primeiro presidente do Brasil?
+            </p>
+            <div class="form-check my-2">
+              <label data-testid="answer-2-1" class="form-check-label">
+                <input type="radio" name="inputQuestion2" value="A" />
+                Floriano Peixoto
+              </label>
+            </div>
+            <div class="form-check my-2">
+              <label data-testid="answer-2-2" class="form-check-label">
+                <input type="radio" name="inputQuestion2" value="B" />
+                Prudente de Morais
+              </label>
+            </div>
+            <div class="form-check my-2">
+              <label data-testid="answer-2-3" class="form-check-label">
+                <input type="radio" name="inputQuestion2" value="C" />
+                General Osório
+              </label>
+            </div>
+            <div class="form-check my-2">
+              <label data-testid="answer-2-4" class="form-check-label">
+                <input type="radio" name="inputQuestion2" value="D" />
+                Marechal Deodoro da Fonseca
+              </label>
+            </div>
           </div>
-          <div class="form-check my-2">
-            <label class="form-check-label">
-              <input type="radio" name="inputQuestion2" value="B">
-              Prudente de Morais
-            </label>
-          </div>
-          <div class="form-check my-2">
-            <label class="form-check-label">
-              <input type="radio" name="inputQuestion2" value="C">
-              General Osório
-            </label>
-          </div>
-          <div class="form-check my-2">
-            <label class="form-check-label">
-              <input type="radio" name="inputQuestion2" value="D">
-              Marechal Deodoro da Fonseca
-            </label>
-          </div>
-        </div>
 
-        <div class="my-5 question__container">
-          <p class="lead font-weight-normal">3. Em que ano teve início a Guerra do Paraguai?</p>
-          <div class="form-check my-2">
-            <label class="form-check-label">
-              <input type="radio" name="inputQuestion3" value="A">
-              Em 1864
-            </label>
+          <div class="my-5 question__container">
+            <p class="lead font-weight-normal">
+              3. Em que ano teve início a Guerra do Paraguai?
+            </p>
+            <div class="form-check my-2">
+              <label data-testid="answer-3-1" class="form-check-label">
+                <input type="radio" name="inputQuestion3" value="A" />
+                Em 1864
+              </label>
+            </div>
+            <div class="form-check my-2">
+              <label class="form-check-label" data-testid="answer-3-2">
+                <input type="radio" name="inputQuestion3" value="B" />
+                Em 1850
+              </label>
+            </div>
+            <div class="form-check my-2">
+              <label class="form-check-label" data-testid="answer-3-3">
+                <input type="radio" name="inputQuestion3" value="C" />
+                Em 1780
+              </label>
+            </div>
+            <div class="form-check my-2">
+              <label class="form-check-label" data-testid="answer-3-4">
+                <input type="radio" name="inputQuestion3" value="D" />
+                Em 1640
+              </label>
+            </div>
           </div>
-          <div class="form-check my-2">
-            <label class="form-check-label">
-              <input type="radio" name="inputQuestion3" value="B">
-              Em 1850
-            </label>
-          </div>
-          <div class="form-check my-2">
-            <label class="form-check-label">
-              <input type="radio" name="inputQuestion3" value="C">
-              Em 1780
-            </label>
-          </div>
-          <div class="form-check my-2">
-            <label class="form-check-label">
-              <input type="radio" name="inputQuestion3" value="D">
-              Em 1640
-            </label>
-          </div>
-        </div>
 
-        <div class="my-5 question__container">
-          <p class="lead font-weight-normal">4. Qual foi a lei que proibiu o tráfico negreiro para o Brasil?</p>
-          <div class="form-check my-2">
-            <label class="form-check-label">
-              <input type="radio" name="inputQuestion4" value="A">
-              Tratado de Amizade e Aliança
-            </label>
+          <div class="my-5 question__container">
+            <p class="lead font-weight-normal">
+              4. Qual foi a lei que proibiu o tráfico negreiro para o Brasil?
+            </p>
+            <div class="form-check my-2">
+              <label data-testid="answer-4-1" class="form-check-label">
+                <input type="radio" name="inputQuestion4" value="A" />
+                Tratado de Amizade e Aliança
+              </label>
+            </div>
+            <div class="form-check my-2">
+              <label data-testid="answer-4-2" class="form-check-label">
+                <input type="radio" name="inputQuestion4" value="B" />
+                Lei Áurea
+              </label>
+            </div>
+            <div class="form-check my-2">
+              <label data-testid="answer-4-3" class="form-check-label">
+                <input type="radio" name="inputQuestion4" value="C" />
+                Lei Eusébio de Queiroz
+              </label>
+            </div>
+            <div class="form-check my-2">
+              <label data-testid="answer-4-4" class="form-check-label">
+                <input type="radio" name="inputQuestion4" value="D" />
+                Tratado de Methuen
+              </label>
+            </div>
           </div>
-          <div class="form-check my-2">
-            <label class="form-check-label">
-              <input type="radio" name="inputQuestion4" value="B">
-              Lei Áurea
-            </label>
-          </div>
-          <div class="form-check my-2">
-            <label class="form-check-label">
-              <input type="radio" name="inputQuestion4" value="C">
-              Lei Eusébio de Queiroz
-            </label>
-          </div>
-          <div class="form-check my-2">
-            <label class="form-check-label">
-              <input type="radio" name="inputQuestion4" value="D">
-              Tratado de Methuen
-            </label>
-          </div>
-        </div>
 
-        <div class="my-5 question__container">
-          <p class="lead font-weight-normal">5. Qual era o verdadeiro nome de Tiradentes?</p>
-          <div class="form-check my-2">
-            <label class="form-check-label">
-              <input type="radio" name="inputQuestion5" value="A">
-              Joaquim Bento Costa Xavier
-            </label>
+          <div class="my-5 question__container">
+            <p class="lead font-weight-normal">
+              5. Qual era o verdadeiro nome de Tiradentes?
+            </p>
+            <div class="form-check my-2">
+              <label data-testid="answer-5-1" class="form-check-label">
+                <input type="radio" name="inputQuestion5" value="A" />
+                Joaquim Bento Costa Xavier
+              </label>
+            </div>
+            <div class="form-check my-2">
+              <label data-testid="answer-5-2" class="form-check-label">
+                <input type="radio" name="inputQuestion5" value="B" />
+                Joaquim José da Silva Xavier
+              </label>
+            </div>
+            <div class="form-check my-2">
+              <label data-testid="answer-5-3" class="form-check-label">
+                <input type="radio" name="inputQuestion5" value="C" />
+                José Joaquim da Silva Xavier
+              </label>
+            </div>
+            <div class="form-check my-2">
+              <label data-testid="answer-5-4" class="form-check-label">
+                <input type="radio" name="inputQuestion5" value="D" />
+                Francisco da Silva Xavier
+              </label>
+            </div>
           </div>
-          <div class="form-check my-2">
-            <label class="form-check-label">
-              <input type="radio" name="inputQuestion5" value="B">
-              Joaquim José da Silva Xavier
-            </label>
-          </div>
-          <div class="form-check my-2">
-            <label class="form-check-label">
-              <input type="radio" name="inputQuestion5" value="C">
-              José Joaquim da Silva Xavier
-            </label>
-          </div>
-          <div class="form-check my-2">
-            <label class="form-check-label">
-              <input type="radio" name="inputQuestion5" value="D">
-              Francisco da Silva Xavier
-            </label>
-          </div>
-        </div>
 
-        <div class="text-center">
-          <button class="btn bg-success text-light">Enviar</button>
-        </div>
-      </form>
+          <div class="text-center">
+            <button data-testid="submit-quiz" class="btn bg-success text-light">
+              Enviar
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
-  </div>
-  <script src="./js/app.js"></script>
-</body>
-
+    <script src="./js/app.js"></script>
+  </body>
 </html>
